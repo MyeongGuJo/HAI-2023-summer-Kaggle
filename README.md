@@ -18,4 +18,5 @@ tokenizer = BertTokenizer.from_pretrained(args.model_ckpt)
 ```
 
 lr = 35e-6으로 설정
+
 사용 모델: https://huggingface.co/kykim/bert-kor-base
