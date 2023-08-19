@@ -3,11 +3,23 @@ HAI 2023 여름 방학 과제 (Kaggle)
 https://www.kaggle.com/competitions/hai2023summer
 
 baseline 코드에서 모델, lr만 변경
+
 ```python
 from transformers import BertTokenizer, BertForSequenceClassification
 ```
 ```python
-"model_ckpt" : "kykim/bert-kor-base"
+args = easydict.EasyDict({
+  "train_path" : "./data/train.csv",
+  "valid_path" : "./data/valid.csv",
+  "device" : 'cpu',
+  "mode" : "train",
+  "batch" : 128,
+  "maxlen" : 128,
+  "lr" : 35e-6,
+  "eps" : 1e-8,
+  "epochs" : 1,
+  "model_ckpt" : "kykim/bert-kor-base",
+})
 ```
 ```python
 # load model and tokenizer
