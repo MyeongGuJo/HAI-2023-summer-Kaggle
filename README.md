@@ -5,7 +5,7 @@ https://www.kaggle.com/competitions/hai2023summer
 baseline 코드에서 모델, lr만 변경
 
 ```python
-from transformers import BertTokenizer, BertForSequenceClassification
+from transformers import BertTokenizer, BertForSequenceClassification # 추가
 ```
 ```python
 args = easydict.EasyDict({
@@ -15,20 +15,18 @@ args = easydict.EasyDict({
   "mode" : "train",
   "batch" : 128,
   "maxlen" : 128,
-  "lr" : 35e-6,
+  "lr" : 35e-6, # 변경
   "eps" : 1e-8,
   "epochs" : 1,
-  "model_ckpt" : "kykim/bert-kor-base",
+  "model_ckpt" : "kykim/bert-kor-base", # 변경
 })
 ```
 ```python
 # load model and tokenizer
 # CHECKPOINT_NAME = 'kykim/bert-kor-base'
-model = BertForSequenceClassification.from_pretrained(args.model_ckpt, num_labels=3)
+model = BertForSequenceClassification.from_pretrained(args.model_ckpt, num_labels=3) # 변경
 model.to(args.device)
-tokenizer = BertTokenizer.from_pretrained(args.model_ckpt)
+tokenizer = BertTokenizer.from_pretrained(args.model_ckpt) # 변경
 ```
-
-lr = 35e-6으로 설정
 
 사용 모델: https://huggingface.co/kykim/bert-kor-base
