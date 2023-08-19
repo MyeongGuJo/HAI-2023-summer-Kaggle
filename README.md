@@ -57,7 +57,7 @@ args = easydict.EasyDict({
 ```
 ```python
 # load model and tokenizer
-# CHECKPOINT_NAME = 'kykim/bert-kor-base'
+# CHECKPOINT_NAME = "circulus/koelectra-dialect-v1"
 model = ElectraForSequenceClassification.from_pretrained(args.model_ckpt, num_labels=3) # 변경
 model.to(args.device)
 tokenizer = ElectraTokenizer.from_pretrained(args.model_ckpt) # 변경
