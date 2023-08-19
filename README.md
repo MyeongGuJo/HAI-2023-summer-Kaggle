@@ -36,7 +36,10 @@ tokenizer = BertTokenizer.from_pretrained(args.model_ckpt) # 변경
 8.19 수정
 
 모델과 lr을 변경하니 점수가 향상됨. (0.94408 -> 0.97444)
+
 모델은 내가 찾은 건 아니고 지명이가 올린 걸 돌려본 것...
+
+방언 분류가 fine-tuning 된거라 겁나 좋음
 
 ```python
 from transformers import ElectraTokenizer, ElectraForSequenceClassification # 추가
